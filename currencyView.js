@@ -1,5 +1,5 @@
 
-appU.constructors.currencyView = function(currencyParam){
+appU.Constructors.CurrencyView = function(currencyParam){
     var that = this;
     this._currency = currencyParam;
 

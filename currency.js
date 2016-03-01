@@ -1,9 +1,9 @@
 
 var appU = {
-    constructors: {}
+    Constructors: {}
 };
 
-appU.constructors.currency = function(){
+appU.Constructors.Currency = function(){
     var that = this;
     this._currenciesTypes = {
         "+USD": "USD",
@@ -12,7 +12,7 @@ appU.constructors.currency = function(){
         "+PLN": "PLN"
     }
 
-    var view = new appU.constructors.currencyView(this);
+    var view = new appU.Constructors.CurrencyView(this);
 
     //Sets current date
     this._setDate = function(){
