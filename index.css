@@ -1,0 +1,44 @@
+
+#today{
+    text-align: center;
+}
+
+#date{
+    text-align: center;
+}
+
+#currencySelected{
+    text-align: center;
+}
+
+#columnsOption{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+/*Table of currencies*/
+    #currenciesTable tr{
+        border-bottom: 1px solid #d6d6d6;
+    }
+
+    #currenciesTable th{
+         text-align: center;
+     }
+
+    #currenciesTable td{
+         text-align: center;
+     }
+
+.currencyInfo:link {
+    text-decoration: none;
+}
+
+ #footer{
+    font-size: 11px;
+    text-align: center;
+ }
+
+
+

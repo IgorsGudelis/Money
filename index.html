@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, width=device-width, height=device-height"/>
+
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+        <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <title>Exchange Rates</title>
+    </head>
+    <body>
+
+        <div data-role="page">
+            <div data-role="panel" id="leftPanel" data-theme="b">
+                <ul data-role="listview">
+                    <li data-icon="delete"><a href="#" id="closePanel" data-rel="close">Close</a></li>
+                    <li data-role="list-divider">Select a currency</li>
+                    <li><a href="#" id="allCurrenciesTypes" data-rel="close">Show all currencies</a></li>
+                    <li><a href="#" class="currencyType" data-rel="close">USD</a></li>
+                    <li><a href="#" class="currencyType" data-rel="close">EUR</a></li>
+                    <li><a href="#" class="currencyType" data-rel="close">GBP</a></li>
+                    <li><a href="#" class="currencyType" data-rel="close">PLN</a></li>
+                </ul>
+            </div>
+
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <h1>Exchange Rates</h1>
+                <a href="#leftPanel" id="menu" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext">Menu</a>
+            </div>
+
+            <div data-role="content" id="content">
+                <h1 id="today">Today</h1>
+                <p id="date"></p>
+
+                <div style="text-align: right;">
+                    <a href="#" id="btnColumns" class="ui-btn ui-btn-inline ui-mini ui-corner-all">Columns</a>
+                </div>
+                <div id="columnsOption">
+                    <form>
+                        <fieldset data-role="controlgroup">
+                            <input type="checkbox" id="buyTh" value=".buy" name="buyTh" checked>
+                            <label for="buyTh">Buy</label>
+
+                            <input type="checkbox" id="sellTh" value=".sell" name="sellTh" checked>
+                            <label for="sellTh">Sell</label>
+
+                            <input type="checkbox" id="infoTh" value=".info" name="infoTh" checked>
+                            <label for="infoTh">Info</label>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <table  id="currenciesTable" data-role="table" data-mode="columntoggle" class=" ui-shadow table-stripe">
+                    <thead>
+                    <tr class="ui-bar-c">
+                        <th>Currencies</th>
+                        <th class="buy">Buy</th>
+                        <th class="sell">Sell</th>
+                        <th class="info">Info</th>
+                    </tr>
+                    </thead>
+
+                    <tbody></tbody>
+                </table>
+
+                <div id="currencySelected">
+                    <h1 id="currencyName"></h1>
+                    <p id="bankBuy"></p>
+                    <p id="bankSell"></p>
+                </div>
+            </div>
+
+            <div id="footer" data-role="footer" data-position="fixed" data-theme="b">Minsk 2016</div>
+        </div>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/currency.js"></script>
+        <script type="text/javascript" src="js/currencyView.js"></script>
+
+        <script type="text/javascript">
+            var currency = new appU.constructors.currency();
+            currency.showPageContent();
+        </script>
+    </body>
+</html>
